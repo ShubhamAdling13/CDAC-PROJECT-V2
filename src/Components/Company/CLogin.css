@@ -1,0 +1,82 @@
+body {
+    /* font-size: larger;
+    font-style: normal;
+    font-weight: bolder; */
+    /* background-image: linear-gradient(to right, white, rgb(70, 243, 133) 50%, rgb(101, 242, 249) 50%, rgb(250, 252, 118) 50%, rgb(255, 255, 255)); */
+    /* background-image: url(../../Images/dash.jpg); */
+    height: 100vh;
+    width: 100vw;
+}
+#compbodyyy{
+    /* background-image: url(../../Images/dash.jpg); */
+    padding-bottom:15%;
+    background-size: 100%;
+
+}
+
+
+#mm {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#main {
+    border-radius: 25px;
+    border: 5px groove bisque;
+    max-width: 40%;
+    margin-top: 50px;
+    padding: 50px;
+    background-color: rgba(167, 254, 225, 0.9);
+}
+
+#im {
+   display: block;
+    width: 20%;
+    height: 20%;
+    margin: auto;
+    filter: drop-shadow(0 0 10px rgb(84, 241, 84));
+}
+
+.i {
+    width: 100%;
+    border-radius: 20px;
+    height: 25px;
+}
+
+#signin,button{
+    margin-top: 20px;
+    background-color: rgb(156, 250, 151);
+    width: 100%;
+    font-style: normal;
+    font-weight: bolder;
+}
+
+#oo {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    width: 100%; height: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+    #main {
+        width: 50%;
+    }
+}
+#mm h2{
+    margin-left: 10px; color:rgb(255, 170, 80); background-color: black; border: 5px solid ; border-radius: 20px;
+}
+
+
+#cbgimg img{
+    position: absolute;
+    z-index: -1;
+    /* height: 500px; */
+    /* width: 500px; */
+    height: auto;
+    /* width: max-content; */
+
+  }
