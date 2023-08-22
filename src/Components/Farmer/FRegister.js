@@ -30,7 +30,7 @@ export const FRegister=()=>
   
     //     return true;
     //   }
-
+   
        
       const[farmName,setfarmName] = useState("");
       const[gender,setgender] = useState("");
@@ -44,8 +44,8 @@ export const FRegister=()=>
       const[farmerId ,setfarmerId] =useState("");
       const[farmPass, setfarmPass] =useState("");
 
-      
-      const Farmer ={farmName,gender,date,mobileNo,farmAddress,farmTaluka,farmDist,farmState,pincode,farmerId,farmPass};
+         const CompIdVar= localStorage.getItem("CompIdTemp");
+      const Farmer = {farmName,gender,date,mobileNo,farmAddress,farmTaluka,farmDist,farmState,pincode,farmerId,farmPass };
       
       
       const handlefarminfo = async(e)=>
@@ -53,6 +53,16 @@ export const FRegister=()=>
 
         e.preventDefault();
         
+        for (const key in Farmer) {
+          if (Farmer[key] === undefined || Farmer[key] === null || Farmer[key] === '')
+           {
+            toast.error("kuch to data dal de bhai",toast.POSITION.TOP_RIGHT);
+    
+            return false;
+          }
+         else{
+
+         
         console.log(Farmer);
         if( await addfarmer(Farmer))
         {
@@ -63,6 +73,9 @@ export const FRegister=()=>
         else{
           toast.error("error bitch",toast.POSITION.TOP_CENTER);
         }
+
+      }
+    }
 
 
          
@@ -85,9 +98,9 @@ export const FRegister=()=>
 
  
     return(<>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-
+   <div className="fregisterpg">
     <div id="main3"> 
        <div id="outsidef">
 
@@ -187,7 +200,7 @@ export const FRegister=()=>
       </div>
 
 
-
+      </div>
 
  
 

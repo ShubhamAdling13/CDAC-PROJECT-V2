@@ -19,7 +19,7 @@ export const DashV1 =()=>
           <h1 style={{ color: 'rgb(0, 0, 0)', fontWeight: 'bolder', fontFamily: 'Times New Roman, Times, serif' }}>
             POULTRY BOOK
           </h1>
-          <h2 style={{ fontFamily: 'Times New Roman, Times, serif', fontWeight: '100', color: 'rgb(80, 92, 255)', border: '1px ridge' }}>
+          <h2 style={{ fontFamily: 'Times New Roman, Times, serif', fontWeight: '100', color: 'rgb(80, 92, 255)' }}>
             "Unlock the Potential of <br/> Your Poultry Farm with <br/> Smart Management."
           </h2>
         </div>

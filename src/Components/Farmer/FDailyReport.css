@@ -156,3 +156,9 @@ animation-delay: 0ms;
   box-sizing: border-box;
   width: 25%;
 }
+
+#whole{
+    padding-top: 5%;
+    background-color: lavender;
+    padding-bottom: 25%;
+}

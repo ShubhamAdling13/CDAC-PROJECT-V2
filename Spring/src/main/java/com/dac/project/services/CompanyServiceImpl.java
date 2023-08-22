@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.dac.project.Repository.CompanyRepository;
 import com.dac.project.Repository.FarmerRepo;
+import com.dac.project.model.CompLogin;
 import com.dac.project.model.Company;
 import com.dac.project.model.FarmLogin;
 import com.dac.project.model.Farmer;
@@ -62,8 +63,28 @@ public class CompanyServiceImpl implements CompanyService {
 	 }
 		 
 	 }
+
+
+	@Override
+	public Boolean checkcomplogininfo(CompLogin cmplg) {
+		
+	try {	
+	 Company cpmdt =compRepository.findById(cmplg.getCompid()).get();
+	 
+	  if(cmplg.getCompid().equals(cpmdt.getCompanyusername())&& cmplg.getComppass().equals(cpmdt.getCompanypassword()))
+	  {
+		  return true;
+	  }
+		return false;
+	}
+	
+	catch(Exception e)
+	{
+		return false;
+	}
 	
 
 
 
+}
 }

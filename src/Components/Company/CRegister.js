@@ -18,7 +18,7 @@ export const CRegister=()=>
     const[ companyname , setcompanyname] = useState("");
     const[ ownername , setownername] =useState("");
     const[ companyemail,setcompanyemail] =useState("");
-    const[ companycontact ,setcompanycontact] =useState();
+    const[ companycontact ,setcompanycontact] =useState("");
     
     const[companyaddress,setcompanyaddress]=useState("");
     const[companyusername,setcompanyusername]=useState("");
@@ -29,14 +29,29 @@ export const CRegister=()=>
    const handlecompinfo = async(e)=>{
           e.preventDefault();
           // const Company = {companyname,ownername,companyemail,companycontact,companyaddress,companyusername,companypassword,aboutcompany};
-          console.log(Company);
-       if( await addCompany(Company))
-          {
-            showbanner();
-          }
-        
          
-   }
+
+          for (const key in Company) {
+            if (Company[key] === undefined || Company[key] === null || Company[key] === '')
+             {
+              toast.error("kuch to data dal de bhai",toast.POSITION.TOP_RIGHT);
+      
+              return false;
+            }
+          
+         
+
+
+      else{
+        console.log(Company);
+           if( await addCompany(Company))
+            {
+            showbanner();
+            }    
+         
+        }
+     }
+  }
 
 
 

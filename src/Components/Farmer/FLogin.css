@@ -1,58 +1,69 @@
 
-#bodyyy{
+#flbodyyy{
     /* background-image: url(../../Images/dash.jpg); */
     /* background-position-x: center; */
-    object-fit: contain;
+    /* object-fit: contain; */
     padding-bottom:13%;
     /* background-size: 100%; */
+    display: flex;
+    /* border: 10px solid green; */
+    /* padding-top: 5%; */
+    /* background: linear-gradient(45deg,cyan,white,cyan ,white); */
+    /* background-color: rgb(255, 226, 152); */
 }
 
 
-#mm {
+#flbodyyy #mm {
     display: flex;
     flex-flow: column;
     align-items: center;
+    /* border: 1px solid blue; */
+    margin-right: 1%;
+    width: 70%;
 }
 
-#main {
-    border-radius: 25px;
-    border: 5px groove bisque;
-    max-width: 40%;
-    margin-top: 50px;
+#flbodyyy #mm #main {
+    border-radius: 15px;
+    border: 2px inset bisque;
+    width: 50%;
+    height: 100%;
+    /* margin-top: 50px; */
     padding: 50px;
-    background-color: rgba(167, 254, 225, 0.9);
+    /* background-color: rgba(254, 235, 167, 0.9); */
+    
 }
 
-#im {
+#flbodyyy .login-form #im {
+ 
    display: block;
-    width: 20%;
-    height: 20%;
+    width: 40%;
+    height: 40%;
     margin: auto;
     filter: drop-shadow(0 0 10px rgb(84, 241, 84));
 }
 
-.i {
+#flbodyyy #main .i {
     width: 100%;
     border-radius: 20px;
     height: 25px;
 }
 
-#signin {
+#flbodyyy .login-form #signinn {
     margin-top: 20px;
-    background-color: rgb(156, 250, 151);
+    background-color: rgb(237, 250, 151);
     width: 100%;
     font-style: normal;
     font-weight: bolder;
 }
 
-#oo {
+/* #oo {
     position: absolute;
     z-index: -1;
     opacity: 0.5;
     width: 100%;
     height: 100%;
     width: 100%; height: 100%;
-}
+} */
 
 @media only screen and (max-width: 800px) {
     #main {
@@ -97,9 +108,22 @@
   }
 
   
-  #fbgimg img{
+  #flbodyyy #flbg img{
     position: absolute;
     z-index: -1;
+    width: 100%;
+    /* height: 100%; */
  
   }
 
+
+
+/* #flleftimg img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+} */
+#flbodyyy .login-heading{
+  margin-top: 5%;
+}

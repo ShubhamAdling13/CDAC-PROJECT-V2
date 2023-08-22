@@ -24,10 +24,10 @@ import { CDash } from './Components/Company/CDash';
 
 
 function App() {
-  const[changebgcolor,setbgcolor] = useState("");
+  
 
   return (
-    <div className="App" style={{ background: changebgcolor }}>
+    <div className="App" >
 
   
       
@@ -40,28 +40,17 @@ function App() {
         </span>
         <span className="home">
        
-            <li><Link to="/" onClick={()=>{
-              setbgcolor("linear-gradient(greenyellow,white,cyan,white)")}}>Home</Link> </li>
+            <li><Link to="/" >Home</Link> </li>
         </span>
         <span className="farmlog">
-        <li><Link to="home/Farmerlogin" onClick={()=>{
-              setbgcolor("linear-gradient(greenyellow,white,rgb(255, 245, 152),rgb(255, 229, 196),white)")}}>Farmer Login</Link> </li>
+        <li><Link to="home/Farmerlogin"> 
+                Farmer Login</Link> </li>
         </span>
         <span className="complog">
-        <li><Link to="home/Companylogin" onClick={()=>{
-              setbgcolor("linear-gradient(greenyellow,white,,rgb(255, 229, 196))")
-           
-            
-            
-            }}
-              
-              
-              >Company Login</Link> </li>
+        <li><Link to="home/Companylogin"  >Company Login</Link> </li>
         </span>
         <span className="abou">
-        <li><Link to="/about" onClick={()=>{
-          
-              setbgcolor("linear-gradient(45deg,cyan,white)")}}>About Us</Link> </li>
+        <li><Link to="/about" >About Us</Link> </li>
         </span>
 
 

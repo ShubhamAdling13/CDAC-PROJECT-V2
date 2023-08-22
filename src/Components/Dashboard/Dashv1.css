@@ -4,7 +4,7 @@
 
   
   
-  div.bg {
+  div .bg {
 
     margin: 0;
 
@@ -17,7 +17,7 @@
   {
     font-style: italic;
     font-size: x-large;
-    max-width: 100%;
+    width: 50%;
     height: 70%;
 
     padding: 10px;
@@ -251,4 +251,8 @@
   
       }
 
+    }
+
+    .maindash{
+      background:linear-gradient(rgb(218, 255, 163),white,cyan,white);
     }

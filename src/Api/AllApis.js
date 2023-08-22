@@ -7,7 +7,8 @@ const apiUrl= 'http://localhost:8080';
 export const  addCompany = async(data)=>
 {
     try{
-       return await axios.post(`${apiUrl}/CompanyRegistration`,data)
+     return await axios.post(`${apiUrl}/CompanyRegistration`,data)
+       
     }
     catch(error)
     {

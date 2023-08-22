@@ -1,41 +1,7 @@
 
-  .navbar {
-    background-color: rgb(15, 17, 17);
-    padding: 20px;
-  }
 
-  .navbar-brand {
-    color: rgb(7, 5, 5);
-    font-size: 24px;
-    text-align: center;
-    width: 100%;
-  }
 
-  .navbar-brand span {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-  }
-
-  .navbar-brand span span {
-    background-color: #FFF;
-    color: rgb(15, 17, 17);
-    padding: 2px 10px;
-    border-radius: 4px;
-  }
-
-  .home-button {
-    color: rgb(24, 21, 21);
-    font-size: 20px;
-    transition: transform 0.3s ease;
-  }
-
-  .home-button:hover {
-    color: #FFA500;
-    transform: scale(1.2);
-  }
-
-  .form-container {
+.fregisterpg .form-container {
     background-color: #FFF;
     border-radius: 10px;
     padding: 30px;
@@ -54,13 +20,13 @@
     }
   }
 
-  .form-container h2 {
+  .fregisterpg .form-container h2 {
     text-align: center;
     margin-bottom: 30px;
     color: #333;
   }
 
-  .form-group label {
+  .fregisterpg .fregisterpg  .form-group label {
     color: #555;
     font-weight: bold;
     display: block;
@@ -68,7 +34,7 @@
     transition: transform 0.3s ease;
   }
 
-  .form-group input[type="text"],
+  .fregisterpg  .form-group input[type="text"],
   .form-group input[type="email"],
   .form-group input[type="tel"],
   .form-group input[type="password"],
@@ -81,12 +47,12 @@
     transition: transform 0.3s ease;
   }
 
-  .form-group i {
+  .fregisterpg .form-group i {
     color: #777;
     transition: transform 0.3s ease;
   }
 
-  .form-group input[type="text"]:focus,
+  .fregisterpg .form-group input[type="text"]:focus,
   .form-group input[type="email"]:focus,
   .form-group input[type="tel"]:focus,
   .form-group input[type="password"]:focus,
@@ -95,20 +61,20 @@
     transform: scale(1.1);
   }
 
-  .btn-primary {
+  .fregisterpg .btn-primary {
     background-color: #1E90FF;
     border: none;
     padding: 10px 20px;
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
 
-  .btn-primary:hover {
+  .fregisterpg .btn-primary:hover {
     background-color: #00BFFF;
     transform: scale(1.1);
   }
 
   /* Animation for Graphics Symbols */
-  .graphic-container i {
+  .fregisterpg .graphic-container i {
     font-size: 30px;
     color: #1E90FF;
     animation: rotate 1.5s infinite linear;
@@ -123,33 +89,38 @@
     }
   }
 
-  #outsidef{
+  .fregisterpg #outsidef{
     display: flex;
     flex-direction: column;
      margin: auto;
      border: 1px solid black;
-     max-width: 600px;
+     max-width: 60%;
      padding: 2%;
-     background-color: #fcffa3;
+     background:linear-gradient(rgb(182, 88, 182),rgb(135, 95, 255),rgb(83, 201, 201));
      justify-content: center;
      align-items: center;
   }
-  #main3
+  .fregisterpg #main3
   {
-    background-color: rgb(200, 255, 174);
+    background:linear-gradient(45deg,red,white,cyan,white);
   }
 
 
-  #rstbtn{
+  .fregisterpg #rstbtn{
     display: none;
 
   }
 
-  .submitbtnn{
-    /* margin-left: 100px; */
-    /* margin-right: auto; */
-    border-radius: 20px;
+  .fregisterpg .submitbtnn{
+    display: block;
+    margin: auto;
+    font-size: larger;
+    font-weight: bolder;
+    margin-top: 5%;
+    border-radius: 10px;
     height: 50px;
+    width: 100%;
+    background-color: #ffa200;
   }
 
   

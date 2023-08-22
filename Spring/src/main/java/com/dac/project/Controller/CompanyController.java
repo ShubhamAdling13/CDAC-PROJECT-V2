@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.dac.project.model.CompLogin;
 import com.dac.project.model.Company;
 import com.dac.project.model.FarmLogin;
 
@@ -57,6 +58,15 @@ public class CompanyController {
 		return ans;
 		}
 		else return false;
+	}
+	
+	@PostMapping("/Companylogin")
+	@ResponseBody
+	public Boolean complgncheck(@RequestBody CompLogin cmplg )
+	{
+	    Boolean ansc  =compservice.checkcomplogininfo(cmplg);
+		System.out.println(cmplg);
+		return ansc;
 	}
 	
 }

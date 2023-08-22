@@ -1,39 +1,24 @@
 package com.dac.project.model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+
 import jakarta.persistence.Id;
 
 @Entity
 public class Company {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long compid ;
+	
 	private String companyname ;
 	private String ownername ;
 	private String companyemail ;
 	private String companycontact;
 	private String companyaddress ;
+	@Id
 	private String companyusername ;
 	private String companypassword ;
 	private String aboutcompany ;
 	public Company() {
 		super();
-	}
-	public Company(Long compid, String companyname, String ownername, String companyemail, String companycontact,
-			String companyaddress, String companyusername, String companypassword, String aboutcompany) {
-		super();
-		this.compid = compid;
-		this.companyname = companyname;
-		this.ownername = ownername;
-		this.companyemail = companyemail;
-		this.companycontact = companycontact;
-		this.companyaddress = companyaddress;
-		this.companyusername = companyusername;
-		this.companypassword = companypassword;
-		this.aboutcompany = aboutcompany;
 	}
 	public Company(String companyname, String ownername, String companyemail, String companycontact,
 			String companyaddress, String companyusername, String companypassword, String aboutcompany) {
@@ -46,12 +31,6 @@ public class Company {
 		this.companyusername = companyusername;
 		this.companypassword = companypassword;
 		this.aboutcompany = aboutcompany;
-	}
-	public Long getCompid() {
-		return compid;
-	}
-	public void setCompid(Long compid) {
-		this.compid = compid;
 	}
 	public String getCompanyname() {
 		return companyname;
@@ -103,23 +82,10 @@ public class Company {
 	}
 	@Override
 	public String toString() {
-		return "Company [compid=" + compid + ", companyname=" + companyname + ", ownername=" + ownername
-				+ ", companyemail=" + companyemail + ", companycontact=" + companycontact + ", companyaddress="
-				+ companyaddress + ", companyusername=" + companyusername + ", companypassword=" + companypassword
-				+ ", aboutcompany=" + aboutcompany + "]";
+		return "Company [companyname=" + companyname + ", ownername=" + ownername + ", companyemail=" + companyemail
+				+ ", companycontact=" + companycontact + ", companyaddress=" + companyaddress + ", companyusername="
+				+ companyusername + ", companypassword=" + companypassword + ", aboutcompany=" + aboutcompany + "]";
 	}
 	
-
-
-
-
-
 	
-	
-	
-
-	
-	
-	
-
 }

@@ -6,8 +6,8 @@ import applogo from "../../Images/AppLogo.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-
-
+import flimg from "../../Images/farmdash.png"
+import flbg from "../../Images/dash.jpg"
 export const FLogin = () => {
   const [showpass, setshowpass] = useState(false);
 
@@ -59,8 +59,12 @@ export const FLogin = () => {
 
   return (
      
-    <div id="bodyyy">
-      {/* <div id="fbgimg"><img src={flbgimg}/> </div> */}<ToastContainer/>
+    <div id="flbodyyy">
+      <div id="flbg"><img src={flbg}/> </div>
+      <ToastContainer/>
+  
+     
+
       <div id="mm">
         <h2 className="login-heading">FARMER LOGIN</h2>
         <div id="main" className="login-form">
