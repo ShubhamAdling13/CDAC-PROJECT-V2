@@ -1,8 +1,11 @@
 import axios from "axios";
-import { useState } from "react"
+import {  useState } from "react"
 
+import "./CreateBatch.css";
 export const CreateBatch=()=>{
 
+   
+   
     const apiUrl= 'http://localhost:8080';
    const [startDate,setstartdate] =useState("");
    const [totalBirds,settotalbirds] =useState("");
@@ -18,23 +21,25 @@ export const CreateBatch=()=>{
 
         console.log(resp.data);
       })
-
+     
    }
 
     return(<>
+    <div className="crbatch"> 
      <form >
+             
    <table>
-   
-      <tr><th>Start date</th><th>TOtal birds</th><th>status</th></tr>
+      
+      <tr><th>Start date</th><th>Total birds</th><th>status</th></tr>
       <tr><td><input type="date" onChange={(e)=>{setstartdate(e.target.value)}}/></td>
       <td><input type="number" onChange={(e)=>{settotalbirds(e.target.value)}}/></td>
       <td><select onChange={(e)=>{setbactchstateus(e.target.value)}}><option value={true}>Started</option></select></td></tr>
-          <tr><td><button type="submit"  onClick={sendbatchreg}>Submit data</button></td></tr>
+          <tr id="sss"><td colSpan={3} ><button type="submit"  onClick={sendbatchreg}>Submit data</button></td></tr>
   
    </table>
    </form>
     
-    
+   </div>
     
     </>)
 }

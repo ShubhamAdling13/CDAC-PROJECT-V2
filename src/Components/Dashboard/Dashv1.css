@@ -254,5 +254,6 @@
     }
 
     .maindash{
-      background:linear-gradient(rgb(218, 255, 163),white,cyan,white);
+      /* background:linear-gradient(rgb(218, 255, 163),white,cyan,white); */
+      background: linear-gradient(#1FA0FF,#12DAFB,#A7FDCC);
     }

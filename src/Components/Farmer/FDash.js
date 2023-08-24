@@ -17,6 +17,16 @@ export const FDash = () => {
     axios.get(`${apiUrl}/Getfarm/${id}`).then((resp)=>{
         console.log(resp);
         localStorage.setItem("cboobs",resp.data.compIdTemp);
+     
+     let farmid =localStorage.getItem("pk");
+     let  compid =localStorage.getItem("cboobs");
+        const byt ={compid,farmid}
+
+     axios.post(`${apiUrl}/getbatchdetail`,byt).then((resp)=>{
+      console.log(resp.data);
+      localStorage.setItem("btiddd",resp.data.batchId);
+      localStorage.setItem("stbitch",resp.data.batchStatus);
+     });
        
     })
 

@@ -14,6 +14,8 @@ public class DailyReportData {
     
     @Id
     @GeneratedValue
+    private Long srNo ;
+   
      private int day;
     private Boolean status;
     private LocalDate date ;

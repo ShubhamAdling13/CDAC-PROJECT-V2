@@ -10,12 +10,20 @@ import com.dac.project.model.BatchRegistration;
 public class BatchregistrationServiceImpl implements BatchRegistrationService {
     @Autowired
 	BatchRegisterRepo batchRegisterRepo;
-	
+	 
 	
 	@Override
 	public void saveBatch(BatchRegistration batchRegistration) {
 	              batchRegisterRepo.save(batchRegistration);
 		
+	}
+
+
+	@Override
+	public BatchRegistration getbatchdetai(String farmid) {
+	         
+		BatchRegistration res1 = batchRegisterRepo.getbatch(farmid);
+	          return res1;
 	}
 
 }

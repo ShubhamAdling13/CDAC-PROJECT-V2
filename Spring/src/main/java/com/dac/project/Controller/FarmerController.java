@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dac.project.model.BatchRegistration;
 import com.dac.project.model.Farmer;
+import com.dac.project.model.Fetchbatch;
 import com.dac.project.services.BatchRegistrationService;
 import com.dac.project.services.FarmerService;
 
@@ -25,7 +26,8 @@ public class FarmerController {
 	 FarmerService farmerService;
 	
 	
-	
+	@Autowired
+	BatchRegistrationService batchRegistrationService;
 	  
 	 
 
@@ -52,6 +54,15 @@ public class FarmerController {
 		return farmerService.getFarmerList();
 	}
 	
+	
+	@PostMapping("/getbatchdetail")
+	public BatchRegistration getbatchdetail(@RequestBody Fetchbatch fetchbatch)
+	{      
+		System.out.println(fetchbatch);
+		BatchRegistration res = batchRegistrationService.getbatchdetai(fetchbatch.getFarmid());
+		System.out.println(res);
+		return res;
+	}
 	
 	
 	

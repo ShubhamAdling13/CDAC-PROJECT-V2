@@ -180,7 +180,8 @@
 .fdashmain{
   display: flex;
   flex-direction: row-reverse;
-  background: linear-gradient(65deg, rgb(188, 255, 245) 0%, rgb(255, 232, 158) 100%);
+  /* background: linear-gradient(#D4FC79,#96E6A1); */
+  background: linear-gradient(65deg, #FFFAA7 0%, #FBAC08 100%);
   background-size: 100%;
   
   background-repeat: repeat-x,y;
