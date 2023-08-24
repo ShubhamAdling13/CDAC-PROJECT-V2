@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import "./CDash.css";
 import { FarmerDetails } from "./FarmerDetails"
 import img1 from "../../Images/AppLogo.png"
+import { ToastContainer } from "react-toastify";
  const send=()=>{
     let s=document.getElementById("getfarmdetbtn");
       s.click();
@@ -21,9 +22,9 @@ export const CDash=()=>{
 
    </div>
 
-   <div className="Cdash-outerdiv-image"><img src={img1}/></div>
+   <div className="Cdash-outerdiv-image"> <h1> {localStorage.getItem("compIdTemp")} </h1> <img src={img1}/></div>
 
-
+    <ToastContainer/>
 
    </div>
     </>)

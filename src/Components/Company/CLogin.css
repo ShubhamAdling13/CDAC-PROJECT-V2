@@ -11,6 +11,7 @@ body {
     /* background-image: url(../../Images/dash.jpg); */
     padding-bottom:15%;
     background-size: 100%;
+    background-image: url(../../Images/8264285.jpg);
 
 }
 
@@ -23,11 +24,18 @@ body {
 
 #compbodyyy #main {
     border-radius: 25px;
-    border: 5px groove bisque;
+    border: 1px groove bisque;
     max-width: 40%;
     margin-top: 50px;
     padding: 50px;
-    background-color: rgba(167, 254, 225, 0.9);
+    /* background-color: rgba(167, 254, 225, 0.9); */
+    background-color: rgba(255, 255, 255, 0.079); /* Adjust the alpha value for transparency */
+    backdrop-filter: blur(1px); /* Apply the glass-like effect */
+  background: linear-gradient(135deg,rgba(253, 175, 253, 0.064),white,rgb(255, 221, 192));
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  
+
 }
 
 #im {
@@ -46,7 +54,7 @@ body {
 
 #compbodyyy #signin,#compdasmm button{
     margin-top: 20px;
-    background-color: rgb(151, 217, 250);
+    background-color: rgb(255, 196, 114);
     width: 100%;
     font-style: normal;
     font-weight: bolder;
@@ -68,7 +76,7 @@ body {
     }
 }
 #compdasmm h2{
-    margin-left: 10px; color:rgb(203, 255, 80); background-color: black; border: 5px solid ; border-radius: 20px;
+    margin-left: 10px; color:rgb(218, 157, 131); background-color: black; border: 5px solid ; border-radius: 20px;
     margin-top: 4%;
 }
 
@@ -83,5 +91,5 @@ body {
 
   }
   #compbodyyy{
-    background: linear-gradient(45deg,rgb(19, 53, 71) ,rgb(91, 255, 236));
+    /* background: linear-gradient(45deg,rgb(19, 53, 71) ,rgb(91, 255, 236)); */
   }

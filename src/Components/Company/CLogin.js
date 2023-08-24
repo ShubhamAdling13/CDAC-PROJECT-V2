@@ -8,6 +8,8 @@ import axios from "axios"
 import { ToastContainer, toast } from "react-toastify"
 // import {Helmet} from "react-helmet";
 export const CLogin = () => {
+    //  localStorage.removeItem("compIdVar");
+    // localStorage.setItem("compIdVar",null);
     
     const [seepassword , setseepassword] = useState(false);
     const seepass = () => {
@@ -25,13 +27,13 @@ export const CLogin = () => {
               
      
        
-   
+   try{
      const resp =    await axios.post(`${apiUrl}/Companylogin`,CompLgdet)
         console.log(resp.data);
         
         if(resp.data===true)
         {
-              localStorage.setItem("CompIdTemp",setcompid);
+              localStorage.setItem("compIdVar",compid);
                document.getElementById("cmpdsh").click();
         }
         else
@@ -39,7 +41,11 @@ export const CLogin = () => {
             document.getElementById("cmplgn").click();
             toast.error("Login Failed",toast.POSITION.TOP_CENTER);
         }
-   
+    }
+    catch(error)
+    {
+         toast.error("First Start backend server",toast.POSITION.TOP_CENTER);
+    }
 }
 
 
@@ -71,9 +77,10 @@ export const CLogin = () => {
 
                 <Link to="/home/Companylogin " id="cmplgn" style={{display:"none"}}>sg</Link>
                 <Link to ="/Companylogin/CDash" id="cmpdsh" style={{display:"none"}}>dash</Link>
-                <ToastContainer/>
+                
             </div>
         </div>
+        <ToastContainer/>
         </div>
         
         </>)

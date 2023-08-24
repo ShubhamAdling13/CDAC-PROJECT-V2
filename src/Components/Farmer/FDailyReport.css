@@ -51,6 +51,14 @@
 #whole #content table tr td input{
     width: 100%;
 }
+#whole #content table tr th:last-child{
+    margin-right: 100px;
+}
+
+#whole #content table tr td select{
+    width: 100%;
+    margin-right: 100px;
+}
 
 #whole #content button:hover{
 
@@ -155,6 +163,13 @@ animation-delay: 0ms;
   border: 1px solid #ccc;
   box-sizing: border-box;
   width: 25%;
+}
+#whole .tblr2 td select{
+    flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 #whole{

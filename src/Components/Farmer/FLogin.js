@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import "../Farmer/FLogin.css";
+import "../Farmer/FLoginv2.css";
 import applogo from "../../Images/AppLogo.png";
 
 // import {checkloginfarm} from "../../Api/AllApis"
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import flimg from "../../Images/farmdash.png"
-import flbg from "../../Images/dash.jpg"
+
 export const FLogin = () => {
+
+  //  localStorage.removeItem("pk");
   const [showpass, setshowpass] = useState(false);
 
   const togglepass = () => {
@@ -33,10 +34,12 @@ export const FLogin = () => {
 
      if(response.data===true)  
     {
+     
       localStorage.setItem("pk",farid);
+    
       setTimeout(function(){console.log(obfarmer);   toast.success("Login SUCCESSFUL")} ,1000);
     
-      // toast.success("Login SUCCESSFUL");
+      toast.success("Login SUCCESSFUL");
       document.getElementById("llo").click();
          
      
@@ -47,11 +50,15 @@ export const FLogin = () => {
       {
         toast.error("Login Unsuccesfull",toast.POSITION.BOTTOM_RIGHT);
           
-        document.getElementById("llo1").click();
+        // document.getElementById("llo1").click();
         
       }
- })
+ });
+ 
      
+
+
+
 
     
   }
@@ -60,51 +67,60 @@ export const FLogin = () => {
   return (
      
     <div id="flbodyyy">
-      <div id="flbg"><img src={flbg}/> </div>
-      <ToastContainer/>
+    
+    <title>FARMER LOGIN PAGE</title>
   
      
 
-      <div id="mm">
-        <h2 className="login-heading">FARMER LOGIN</h2>
-        <div id="main" className="login-form">
-          <img src={applogo} alt="logo" id="im" className="logo-image" />
-          <br />
+      
+          
+          
+         <div className="flbodyyy-form"> 
+         <div className="flbodyyy-heading">
+        <h3 >FARMER LOGIN</h3>
+        </div>
+
+        <div><img src={applogo} alt="logo" id="im" className="logo-image" /></div>
           <form >
-            <label htmlFor="username">Username:</label>
-            <input
+           <label>Username  </label> :<input
               type="text"
               id="username"
               className="i"
               placeholder="Enter Username*"  onChange={(e)=>{setusn(e.target.value)}}
             />
-            <br />
-            <label htmlFor="password">Password:</label>
-            <input
+            <br/>
+           <label>  Password:</label>
+           <input
               type={showpass ? "text" : "password"}
               id="password"
               className="i"
               placeholder="Enter Password*"  onChange={(e)=>{setpass(e.target.value)}}
             />
-            <br />
+            <br/>
+           
             <input
               type="checkbox"
               id="chk"
               onChange={togglepass}
             />
+            
             <label htmlFor="chk">Show Password</label>
-            <button id="signinn" className="i" onClick={handleinfo}>Sign In
+            <br/>
+            <button  className="flbodyyy-form-btn" onClick={handleinfo}>Sign In
             </button>
-            <p className="registration-text">
+            
 
             <Link to="/Farmerlogin/dashboard" id="llo" style={{display:"none"}} > a </Link>
-            <Link to= "/home/Farmerlogin" id="llo1" style={{display:"none"}}>b</Link>
+            {/* <Link to= "/home/Farmerlogin" id="llo1" style={{display:"none"}}>b</Link> */}
                
              
-            </p>
+            
           </form>
         </div>
-      </div>
-    </div>
+
+
+        <ToastContainer/>
+        </div> 
+    
   );
 };

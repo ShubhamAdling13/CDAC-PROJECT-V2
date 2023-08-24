@@ -21,7 +21,7 @@
   z-index: 1;
 }
 
-.home,.complog,.farmlog,.abou{
+.home,.complog,.farmlog,.abou,.logout{
     border: 1px outset rgb(255, 255, 255);
     padding: 0.5%;
     min-width: 10%;
@@ -47,7 +47,7 @@
 
 }
 
-.home:hover,.complog:hover,.farmlog:hover,.abou:hover{
+.home:hover,.complog:hover,.farmlog:hover,.abou:hover,.logout:hover{
 
     animation-name: bgcoloranime;
     animation-duration: 1s;

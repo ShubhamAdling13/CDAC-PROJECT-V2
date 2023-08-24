@@ -30,6 +30,22 @@ export const FRegister=()=>
   
     //     return true;
     //   }
+        // const farmdetail={
+        //   farmName:"",
+        //   gender:"",
+        //   date:"",
+        //   mobileNo:"",
+        //   farmAddress:"",
+        //   farmTaluka:"",
+        //   farmDist:"",
+        //   farmState:"",
+        //   pincode:"",
+        //   farmerId:"",
+        //   farmPass:"" 
+        // }
+
+
+
    
        
       const[farmName,setfarmName] = useState("");
@@ -43,45 +59,47 @@ export const FRegister=()=>
       const[pincode,setpincode] =useState();
       const[farmerId ,setfarmerId] =useState("");
       const[farmPass, setfarmPass] =useState("");
-
-         const CompIdVar= localStorage.getItem("CompIdTemp");
-      const Farmer = {farmName,gender,date,mobileNo,farmAddress,farmTaluka,farmDist,farmState,pincode,farmerId,farmPass };
-      
+       
+   
+         const compIdTemp = localStorage.getItem("compIdVar");
+      const Farmer = {farmName,gender,date,mobileNo,farmAddress,farmTaluka,farmDist,farmState,pincode,farmerId,farmPass ,compIdTemp};
+     
       
       const handlefarminfo = async(e)=>
       {
 
         e.preventDefault();
-        
+        console.log(Farmer);
         for (const key in Farmer) {
-          if (Farmer[key] === undefined || Farmer[key] === null || Farmer[key] === '')
+          if ((Farmer[key] === undefined || Farmer[key] === null || Farmer[key] ==="")&&(Farmer[compIdTemp])!==null)
            {
             toast.error("kuch to data dal de bhai",toast.POSITION.TOP_RIGHT);
     
             return false;
           }
-         else{
+        
+        }
 
          
-        console.log(Farmer);
+          console.log("Before data:",Farmer);
         if( await addfarmer(Farmer))
         {
           console.log(Response.error)
           showToastMessage();
+         
+          Farmer.date="";Farmer.farmAddress="";Farmer.farmName="";Farmer.farmPass="";Farmer.farmDist="";Farmer.farmTaluka=""
+          ;Farmer.farmState="";Farmer.pincode="";Farmer.gender="";Farmer.mobileNo="";Farmer.farmerId="";
+
+          console.log("AFTER:",Farmer);
           clearform();
         }
         else{
-          toast.error("error bitch",toast.POSITION.TOP_CENTER);
+          toast.error("error on server bitch",toast.POSITION.TOP_CENTER);
         }
 
       }
-    }
-
-
-         
-           
-
-      }
+    
+    
 
 
       const showToastMessage = () => {
@@ -91,8 +109,8 @@ export const FRegister=()=>
     };
 
     const clearform = ()=>{
-          let a = document.getElementById("rstbtn");
-            a.click();
+          document.getElementById("rstbtn").click();
+          
     }
 
 

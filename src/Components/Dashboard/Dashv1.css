@@ -101,7 +101,7 @@
  }
 
  #egg {
-  animation-name:moveUpDown,eggcolor;
+  animation-name:circle,eggcolor;
   
   /* animation-name: moveInCircle; */
     /* animation-name: moveUpDown; */
@@ -124,7 +124,7 @@
     }
     
     50% {
-      transform: translateY(40px);
+      transform: translateY(50px);
     }
     
     
