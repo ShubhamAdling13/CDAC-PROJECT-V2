@@ -18,6 +18,8 @@ import com.dac.project.model.FarmLogin;
 
 import com.dac.project.services.CompanyService;
 
+import jakarta.servlet.http.HttpSession;
+
 
 @RestController
 @CrossOrigin
@@ -50,11 +52,14 @@ public class CompanyController {
 	@PostMapping("/FarmerLogin")
 	@ResponseBody
 	public Boolean farmloginchk(@RequestBody FarmLogin flg)
+//	public Boolean farmloginchk(@RequestBody FarmLogin flg,HttpSession ses)
 	{  
 	   Boolean ans = compservice.checkfarmlogin(flg);
 		System.out.println(flg);
 		if(ans)
-		{System.out.println(ans);
+		{
+//			ses.setAttribute(null, flg);
+		  System.out.println(ans);
 		return ans;
 		}
 		else return false;
