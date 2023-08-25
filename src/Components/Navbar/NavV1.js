@@ -1,5 +1,5 @@
 
-import '../Navbar/NavV1.css';
+import '../Navbar/NavV2.css';
 import logo from  "../../Images/AppLogo.png" ;
 import {Link} from 'react-router-dom';
 export const NavV1=()=>

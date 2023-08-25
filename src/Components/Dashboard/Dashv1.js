@@ -2,7 +2,7 @@ import "../Dashboard/Dashv1.css"
 
 import cuteEgg from "../../Images/egg.png";
 // import { useState } from "react";
-
+import dimag from "../../Images/Untitleddesign.png"
 export const DashV1 =()=>
 {
   
@@ -13,19 +13,19 @@ export const DashV1 =()=>
  
     
     <div className="maindash">
-       
+       <img src={dimag} id="dashwallp"></img>
 
-        <div id="slogan">
-          <h1 style={{ color: 'rgb(0, 0, 0)', fontWeight: 'bolder', fontFamily: 'Times New Roman, Times, serif' }}>
-            POULTRY BOOK
-          </h1>
-          <h2 style={{ fontFamily: 'Times New Roman, Times, serif', fontWeight: '100', color: 'rgb(80, 92, 255)' }}>
-            "Unlock the Potential of <br/> Your Poultry Farm with <br/> Smart Management."
-          </h2>
+        <div className="maindash-slogan">
+          
+           <h1 id="fh1">  POULTRY BOOK </h1>
+      
+           <h3 id="sh1"> "Unlock The Potential Of  <br/> Your Poultry Farm With  <br/>  Smart Management." </h3> 
+         <img src={cuteEgg} id="egg" alt="ANDA" />
         </div>
 
-        <div className="slideshow-container">
-            <img src={cuteEgg} id="egg" alt="ANDA" />
+        <div className="maindash-imageegg">
+        
+            
            </div>
 
       </div>

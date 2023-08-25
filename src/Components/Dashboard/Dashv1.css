@@ -1,114 +1,5 @@
 
 
- 
-
-  
-  
-  div .bg {
-
-    margin: 0;
-
-
-  }
-
-  
-
-  #slogan
-  {
-    font-style: italic;
-    font-size: x-large;
-    width: 50%;
-    height: 70%;
-
-    padding: 10px;
-    text-align: center;
-
-    border-radius: 25px;
-    border: 1px inset white;
-
-    /* background: linear-gradient(to right, white ,  rgb(242, 186, 244) 50% ,rgb(136, 247, 255) 50% , white 100%); */
-    background: radial-gradient(( red 10%));
-    
-  }
-
-
- 
-
-
-
-
-
-  .slideshow-container {
-
-    padding: 20px;
-   
-    max-width: 500px;
-    max-height: 500px;
-
-   
-  }
-  #ims
-  {
-    max-height: 150%;
-    max-width: 50%;
-    box-shadow: 10px 10px rgb(0, 0, 0);
-
-    z-index: -1; position: absolute;
-  }
-
-  .slideshow-container img {
-
-    max-width: 100%;
-    height: auto;
-   
-    
-     object-fit: cover;
-  }
-
-  .slideshow-container img.active {
-    display: block;
-  }
-
- /* to make them in verticle align */
-  /* .bg,
-  .slogan,
-  .slideshow-container {
-    display: inline-flexbox;
-  } */
-
-  /* to align them horizontally */
-
-  .maindash {
-   
-    background-repeat: repeat-y;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding-top: 10%;
-   padding-bottom: 3.4%;
-  }
-
-  
-  .slogan,
-  .slideshow-container {
-    flex: 1;
-  }
-
- #egg
- {
-  /* animation-timing-function: ease-in; */
-  filter: drop-shadow(0 0 10px rgb(244, 85, 247));
- }
-
- #egg {
-  animation-name:circle,eggcolor;
-  
-  /* animation-name: moveInCircle; */
-    /* animation-name: moveUpDown; */
-    animation-duration: 5s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-  }
 @keyframes eggcolor
 {
    0%{  filter: drop-shadow(0 0 10px rgb(255, 7, 7));}
@@ -186,25 +77,8 @@
     }
   }
 
-  html, body 
-  {
-    margin: 0;
-     height: 100%; 
-     /* overflow: hidden; */
 
-     font-family: Arial, Helvetica, sans-serif;
-     /* background: linear-gradient(to right, white, rgb(70, 243, 133) 49%, rgb(250, 252, 118) 50%, rgb(255, 255, 255)); */
-     /* background-image: url(../../Images/6188692.jpg); */
-     background-size: auto;
-     background-repeat: repeat-y;
-     
- 
-    }
-    .boddyy{
-      /* background-image: url(../../Images/6188692.jpg); */
-      margin-top: 8%;
-      /* background-size: cover; */
-    }
+  
 
 
     @media only screen and (max-width:480px) {
@@ -218,7 +92,8 @@
     
         padding: 10px;
         text-align: center;
-    
+         position: absolute;
+         
         border-radius: 25px;
         border: 1px inset white;
     
@@ -253,7 +128,81 @@
 
     }
 
-    .maindash{
-      /* background:linear-gradient(rgb(218, 255, 163),white,cyan,white); */
-      background: linear-gradient(#1FA0FF,#12DAFB,#A7FDCC);
+
+    /*================== ///////////////////////////////////////////////// ===================*/
+
+    .maindash {
+      height: 100vh;
+        /* border: 2px solid red; */
+            display: grid;
+            grid-template-columns: 40% 49%;
+            grid-gap: 2%;
+            /* background-size: cover; */
+            /* padding-bottom: 2%; */
+           /* background: url(../../Images/Untitleddesign.png); */
+      
+
     }
+
+    .maindash #dashwallp
+    {
+      position: absolute;
+      right: 0;
+      width: 80%;
+      height: 80%;
+      z-index: -1;
+    }
+
+    .maindash-imageegg{
+      /* border: 2px solid blue; */
+    }
+
+    .maindash-slogan{
+      /* border: 2px solid greenyellow; */
+          font-size: xx-large;
+    }
+
+    .maindash-slogan img{
+      width: 50%;
+    }
+
+    .maindash-slogan #fh1{
+      /* font-size: xx-large; */
+      line-height: 100%;
+      font-weight: bold;
+      font-stretch: expanded;
+      padding-top: 5%;
+      padding-left: 5%;
+      color: rgb(0, 0, 0);
+      text-shadow: 4px 1px 1px rgb(9, 226, 255);
+      word-spacing: 10px;
+
+
+    }
+    .maindash-slogan #sh1{
+      text-align: center;
+      padding-left: 0%;
+      color: rgb(0, 0, 0);
+      text-shadow: 2px 2px rgb(198, 255, 27);
+    }
+  
+
+   
+
+      
+/*below will be the for egg    */
+ #egg
+ {
+  padding-left: 20%;
+  filter: drop-shadow(0 0 10px rgb(244, 85, 247));
+ }
+
+ #egg {
+  animation-name:moveUpDown,eggcolor;
+  
+  /* animation-name: moveInCircle; */
+    /* animation-name: moveUpDown; */
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }

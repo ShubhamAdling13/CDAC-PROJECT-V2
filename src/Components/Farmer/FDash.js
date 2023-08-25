@@ -26,6 +26,7 @@ export const FDash = () => {
       console.log(resp.data);
       localStorage.setItem("btiddd",resp.data.batchId);
       localStorage.setItem("stbitch",resp.data.batchStatus);
+      localStorage.setItem("flbthno",resp.data.batchNo);
      });
        
     })

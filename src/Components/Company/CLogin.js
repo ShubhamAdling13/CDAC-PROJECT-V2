@@ -5,6 +5,7 @@ import React ,{ useState } from "react"
 import clbgimg from "../../Images/dash.jpg"
 import { FarmerDetails } from "./FarmerDetails"
 import axios from "axios"
+import clgnpgimg from "../../Images/6101100.png"
 import { ToastContainer, toast } from "react-toastify"
 // import {Helmet} from "react-helmet";
 export const CLogin = () => {
@@ -50,17 +51,19 @@ export const CLogin = () => {
 
 
 
-    return(<>
-{/* 
-    <Helmet>
-      <meta charset="UTF-8"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
-    </Helmet> */}
+    return(<> 
+
+    <div className="compmainbodyy"> 
+                 <div className="compbodyyy-heading">
+                   <h2 id="compbodyyy-h2" >Company LOGIN</h2>
+                   </div>
         <div id="compbodyyy">
-        {/* <div id="cbgimg"><img src={clbgimg}/> </div> */}
+       
+            <div id="compbodyyy-lgnimg"><img src={clgnpgimg} /></div>
+    
         <div id="compdasmm">
         
-        <h2>Company LOGIN</h2>
+        
             <div id="main">
             {/* <h2 >Company LOGIN</h2> */}
                 <img src={applogo} alt="logo" id="im"/>
@@ -72,7 +75,7 @@ export const CLogin = () => {
                 <input type="checkbox" id="chk"  onChange={seepass}/>Show Password 
                 
                 {/* <input type="button" value="Sign In" id="signin" className="i"   onClick={()=>{<FarmerDetails/>}}/> */}
-               <button  onClick={handliecomploginfo}> <Link >   Sign In   </Link> </button>
+               <button  onClick={handliecomploginfo}> <Link style={{color:"white"}}>   Sign In   </Link> </button>
                 Don't have an account ?  <Link to="/Companylogin/CompanyRegistration">Register here</Link>
 
                 <Link to="/home/Companylogin " id="cmplgn" style={{display:"none"}}>sg</Link>
@@ -83,5 +86,7 @@ export const CLogin = () => {
         <ToastContainer/>
         </div>
         
+
+        </div>
         </>)
 }

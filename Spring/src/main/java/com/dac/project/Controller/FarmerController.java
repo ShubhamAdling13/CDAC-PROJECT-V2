@@ -8,13 +8,16 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dac.project.model.BatchRegistration;
+import com.dac.project.model.CloseBatch;
 import com.dac.project.model.Farmer;
 import com.dac.project.model.Fetchbatch;
+
 import com.dac.project.services.BatchRegistrationService;
 import com.dac.project.services.FarmerService;
 
@@ -63,6 +66,19 @@ public class FarmerController {
 		System.out.println(res);
 		return res;
 	}
+	
+	@PutMapping("/closebatch")
+	public String closebatch(@RequestBody  CloseBatch clbatch)
+	{
+		System.out.println(clbatch);
+	
+		batchRegistrationService.closebatchh(clbatch);
+		
+		return "batch closed successfully";
+		
+	}
+	
+	
 	
 	
 	

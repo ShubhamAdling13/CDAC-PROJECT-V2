@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./FDailyReport.css";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 export const FDailyReport = () => {
+  const apiUrl= 'http://localhost:8080';
+ const[batchId,setbh] =useState(localStorage.getItem("btiddd"))
+ const[farmerId,stfmid] =useState(localStorage.getItem("pk"));
+ const[companyId,stecmpidd] =useState(localStorage.getItem("cboobs"));
 
-
-
+ const endbtob ={batchId,farmerId,companyId};
+ const endbatch=()=>{
+        console.log(endbtob)
+        axios.put(`${apiUrl}/closebatch`,endbtob).then((res)=>{
+          console.log(res.data);
+          toast.success("batch ended !!");
+        })
+         
+ }
 
  const handledailyreportfarmer=(e)=>{
        e.preventDefault();
@@ -16,9 +29,9 @@ export const FDailyReport = () => {
 
   return (
     <div id="whole">
-      
+      <ToastContainer/>
       <div id="header">
-        <h1>Daily Report</h1>
+        <h1>Daily Report</h1>       <div><button onClick={endbatch}>End batch</button> </div>
       </div>
       <div id="content">
         <div id="frm">
@@ -34,7 +47,7 @@ export const FDailyReport = () => {
                 <th><h3> Actual Feed Intake </h3></th>
                 {/* <th><h3> Min Body Weight </h3></th> */}
                 <th><h3> Actual Body Weight </h3></th>
-                <th><h3>Status of batch </h3></th>
+                {/* <th><h3>Status of batch </h3></th> */}
               </tr>
               <tr id="tblr2">
                 <td>
@@ -61,9 +74,9 @@ export const FDailyReport = () => {
                 <td>
                   {/* <input type="number" /> */}
                 </td>
-                <td>
+                {/* <td>
                   <select><option value={true}>open</option><option value={false}>ended</option> </select>
-                </td>
+                </td> */}
               </tr>
               <tr>
                 <td >

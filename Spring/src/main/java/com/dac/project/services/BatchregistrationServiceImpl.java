@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.dac.project.Repository.BatchRegisterRepo;
 import com.dac.project.model.BatchRegistration;
+import com.dac.project.model.CloseBatch;
 
 @Service
 public class BatchregistrationServiceImpl implements BatchRegistrationService {
@@ -15,7 +16,8 @@ public class BatchregistrationServiceImpl implements BatchRegistrationService {
 	@Override
 	public void saveBatch(BatchRegistration batchRegistration) {
 	              batchRegisterRepo.save(batchRegistration);
-		
+		          batchRegisterRepo.deleteById(batchRegistration.getBatchId());
+		          batchRegisterRepo.save(batchRegistration);
 	}
 
 
@@ -24,6 +26,16 @@ public class BatchregistrationServiceImpl implements BatchRegistrationService {
 	         
 		BatchRegistration res1 = batchRegisterRepo.getbatch(farmid);
 	          return res1;
+	}
+
+
+	@Override
+	public void closebatchh(CloseBatch clbatch) {
+		     BatchRegistration stbt =    batchRegisterRepo.findById(clbatch.getBatchId()).get();
+		            stbt.setBatchStatus(false);
+		         batchRegisterRepo.save(stbt);
+		           
+		                   
 	}
 
 }
