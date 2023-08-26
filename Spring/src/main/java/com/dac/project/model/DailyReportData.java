@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class DailyReportData {
-    private String companyID ;
+    private String companyId ;
     private String farmerId ;
     private Long  batchId;
     
@@ -16,19 +16,21 @@ public class DailyReportData {
     @GeneratedValue
     private Long srNo ;
    
+    
      private int day;
     private Boolean status;
     private LocalDate date ;
-    private int mort ;
+    private long mort ;
     private long feedIntake ;
     private  long bodyWieght ;
+    private long batchNo;
 	public DailyReportData() {
 		super();
 	}
-	public DailyReportData(String companyID, String farmerId, Long batchId, int day, Boolean status, LocalDate date,
-			int mort, long feedIntake, long bodyWieght) {
+	public DailyReportData(String companyId, String farmerId, Long batchId, int day, Boolean status, LocalDate date,
+			long mort, long feedIntake, long bodyWieght, long batchNo) {
 		super();
-		this.companyID = companyID;
+		this.companyId = companyId;
 		this.farmerId = farmerId;
 		this.batchId = batchId;
 		this.day = day;
@@ -37,12 +39,28 @@ public class DailyReportData {
 		this.mort = mort;
 		this.feedIntake = feedIntake;
 		this.bodyWieght = bodyWieght;
+		this.batchNo = batchNo;
 	}
-	public String getCompanyID() {
-		return companyID;
+	public DailyReportData(String companyId, String farmerId, Long batchId, Long srNo, int day, Boolean status,
+			LocalDate date, long mort, long feedIntake, long bodyWieght, long batchNo) {
+		super();
+		this.companyId = companyId;
+		this.farmerId = farmerId;
+		this.batchId = batchId;
+		this.srNo = srNo;
+		this.day = day;
+		this.status = status;
+		this.date = date;
+		this.mort = mort;
+		this.feedIntake = feedIntake;
+		this.bodyWieght = bodyWieght;
+		this.batchNo = batchNo;
 	}
-	public void setCompanyID(String companyID) {
-		this.companyID = companyID;
+	public String getCompanyId() {
+		return companyId;
+	}
+	public void setCompanyId(String companyId) {
+		this.companyId = companyId;
 	}
 	public String getFarmerId() {
 		return farmerId;
@@ -55,6 +73,12 @@ public class DailyReportData {
 	}
 	public void setBatchId(Long batchId) {
 		this.batchId = batchId;
+	}
+	public Long getSrNo() {
+		return srNo;
+	}
+	public void setSrNo(Long srNo) {
+		this.srNo = srNo;
 	}
 	public int getDay() {
 		return day;
@@ -74,10 +98,10 @@ public class DailyReportData {
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
-	public int getMort() {
+	public long getMort() {
 		return mort;
 	}
-	public void setMort(int mort) {
+	public void setMort(long mort) {
 		this.mort = mort;
 	}
 	public long getFeedIntake() {
@@ -92,6 +116,19 @@ public class DailyReportData {
 	public void setBodyWieght(long bodyWieght) {
 		this.bodyWieght = bodyWieght;
 	}
-    
-    
+	public long getBatchNo() {
+		return batchNo;
+	}
+	public void setBatchNo(long batchNo) {
+		this.batchNo = batchNo;
+	}
+	@Override
+	public String toString() {
+		return "DailyReportData [companyID=" + companyId + ", farmerId=" + farmerId + ", batchId=" + batchId + ", srNo="
+				+ srNo + ", day=" + day + ", status=" + status + ", date=" + date + ", mort=" + mort + ", feedIntake="
+				+ feedIntake + ", bodyWieght=" + bodyWieght + ", batchNo=" + batchNo + "]";
+	}
+ 	
+	
 }
+	

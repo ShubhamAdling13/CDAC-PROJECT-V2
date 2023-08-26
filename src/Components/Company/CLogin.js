@@ -36,6 +36,7 @@ export const CLogin = () => {
         {
               localStorage.setItem("compIdVar",compid);
                document.getElementById("cmpdsh").click();
+               setTimeout(function(){  toast.success("Login SUCCESSFUL")} ,1000);
         }
         else
         {

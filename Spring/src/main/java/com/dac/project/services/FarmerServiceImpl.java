@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dac.project.Repository.FarmerRepo;
+
 import com.dac.project.model.Farmer;
 
 
@@ -35,6 +36,8 @@ public class FarmerServiceImpl implements FarmerService {
 		 List<Farmer> lst = (List<Farmer> ) farmerRepo.findAll();
 		return lst;
 	}
+
+	
 
 
 	

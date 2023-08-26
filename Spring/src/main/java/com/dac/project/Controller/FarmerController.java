@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dac.project.model.BatchRegistration;
 import com.dac.project.model.CloseBatch;
+import com.dac.project.model.DailyReportData;
 import com.dac.project.model.Farmer;
 import com.dac.project.model.Fetchbatch;
 
 import com.dac.project.services.BatchRegistrationService;
+import com.dac.project.services.DailyReportService;
 import com.dac.project.services.FarmerService;
 
 @RestController
@@ -28,6 +30,8 @@ public class FarmerController {
 	@Autowired
 	 FarmerService farmerService;
 	
+	@Autowired
+	DailyReportService dailyReportService;
 	
 	@Autowired
 	BatchRegistrationService batchRegistrationService;
@@ -76,6 +80,13 @@ public class FarmerController {
 		
 		return "batch closed successfully";
 		
+	}
+	
+	@PostMapping("/dailyreportfarmer")
+	public String savedailyreport (@RequestBody DailyReportData dailyReportData)
+	{
+		dailyReportService.savedailyreportfarmer(dailyReportData);
+		return "daily rport data added successfully";
 	}
 	
 	

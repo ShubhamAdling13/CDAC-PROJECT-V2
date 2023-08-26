@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import com.dac.project.model.BatchRegistration;
-import com.dac.project.model.CloseBatch;
+
 
 public interface BatchRegisterRepo extends CrudRepository<BatchRegistration,Long> {
 

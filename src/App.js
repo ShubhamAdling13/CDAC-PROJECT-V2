@@ -24,6 +24,7 @@ import { About } from './Components/Dashboard/About';
 import { CDash } from './Components/Company/CDash';
 import { CreateBatch } from './Components/Farmer/CreateBatch';
 import { Dailyreportoptions } from './Components/Farmer/Dailyreportoptions';
+import { FamerDailyRpDisp } from './Components/Company/FamerDailyRpDisp';
 
 
 
@@ -81,6 +82,7 @@ function App() {
       <Route path="/Companylogin/CDash" element={<CDash />} />
       <Route path='/create' element={<CreateBatch/>}/>
       <Route path='/dailyreportoption' element={<Dailyreportoptions/>}/>
+      <Route path='/GetFarmerDailyReport' element={<FamerDailyRpDisp/>}/>
     </Routes>
   </Router>
 </div> );

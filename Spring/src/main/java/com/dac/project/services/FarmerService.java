@@ -11,4 +11,6 @@ public interface FarmerService {
 	public Farmer getdetails(String fid);
 
 	public List<Farmer> getFarmerList();
+
+
 }

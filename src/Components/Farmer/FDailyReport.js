@@ -4,12 +4,25 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 
 export const FDailyReport = () => {
+
+
   const apiUrl= 'http://localhost:8080';
  const[batchId,setbh] =useState(localStorage.getItem("btiddd"))
  const[farmerId,stfmid] =useState(localStorage.getItem("pk"));
  const[companyId,stecmpidd] =useState(localStorage.getItem("cboobs"));
+const[status,setstatus] =useState(localStorage.getItem("stbitch"));
+const[batchNo,setbatchno]=useState(localStorage.getItem("flbthno"));
+
+ ////////////////////////////// state for storing famrers daily data =========/////////////////////
+ const [date ,setdate]=useState();
+ const[day,setday]=useState();
+const[mort,setmort]=useState();
+const[feedIntake,setfeedintake]=useState();
+const[bodyWieght,setbdywt] =useState();
 
  const endbtob ={batchId,farmerId,companyId};
+ const dailyreportdata ={batchId,bodyWieght,companyId,date,day,farmerId,feedIntake,mort,status,batchNo};
+
  const endbatch=()=>{
         console.log(endbtob)
         axios.put(`${apiUrl}/closebatch`,endbtob).then((res)=>{
@@ -21,8 +34,21 @@ export const FDailyReport = () => {
 
  const handledailyreportfarmer=(e)=>{
        e.preventDefault();
+      console.log(dailyreportdata);
 
-
+      try{
+      axios.post(`${apiUrl}/dailyreportfarmer`,dailyreportdata).then((re)=>{
+          
+        toast.success("Daily report submitted successfully")
+        console.log(re.data);
+        
+      })
+    }
+    catch(error)
+    {
+      toast.error("serverside error");
+      console.log(error.message);
+    }
  }
 
 
@@ -51,19 +77,19 @@ export const FDailyReport = () => {
               </tr>
               <tr id="tblr2">
                 <td>
-                  <input type="date" />
+                  <input type="date" onChange={(e)=>{setdate(e.target.valueAsDate)}} />
                 </td>
                 <td>
-                  <input type="number" />
+                  <input type="number" onChange={(e)=>{setday(e.target.value)}}/>
                 </td>
                 <td>
-                  <input type="number" />
+                  <input type="number" onChange={(e)=>{setmort(e.target.value)}} />
                 </td>
                 <td>
-                  <input type="number" />
+                  <input type="number" onChange={(e)=>{setfeedintake(e.target.value)}}/>
                 </td>
                 <td>
-                  <input type="number" />
+                  <input type="number"  onChange={(e)=>{setbdywt(e.target.value)}}/>
                 </td>
                 {/* <td>
                   <input type="number" />

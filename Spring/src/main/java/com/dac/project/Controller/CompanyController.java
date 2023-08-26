@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dac.project.model.CompLogin;
 import com.dac.project.model.Company;
+import com.dac.project.model.DailyReportData;
 import com.dac.project.model.FarmLogin;
 
 import com.dac.project.services.CompanyService;
+import com.dac.project.services.DailyReportService;
 
 
 
@@ -29,6 +31,8 @@ public class CompanyController {
 	@Autowired
    CompanyService compservice;
     
+	@Autowired
+	DailyReportService dailyReportService;
 	
 	@PostMapping("/CompanyRegistration")
 	@ResponseBody
@@ -73,6 +77,14 @@ public class CompanyController {
 		System.out.println(cmplg);
 		return ansc;
 	}
+	
+	
+	 @GetMapping("/getfmdailyreport/{id}")
+	    public List<DailyReportData> getFarmerDailyReport(@PathVariable("id") String bid) {
+		 System.out.println("inside server");
+		 List<DailyReportData> ls=  (List<DailyReportData>)dailyReportService.getDailyReportByBid(bid);
+	        return ls;
+	    }
 	
 }
 
