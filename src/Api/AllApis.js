@@ -3,7 +3,12 @@ import axios from "axios";
 // import { us} from "react-router-dom";
 
 // const apiUrl = "http://localhost:8080/Companylogin/CompanyRegistration";
-const apiUrl= 'http://localhost:8080';
+
+const apiUrl ="http://localhost:8080";
+// const apiUrl= 'http://192.168.29.83:8080';
+
+
+
 export const  addCompany = async(data)=>
 {
     try{

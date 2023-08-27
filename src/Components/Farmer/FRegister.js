@@ -4,6 +4,8 @@ import { useState } from "react";
 import { addfarmer } from "../../Api/AllApis";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Form } from "react-router-dom";
+import axios from "axios";
 export const FRegister=()=>
 {
     
@@ -52,6 +54,7 @@ export const FRegister=()=>
       const[gender,setgender] = useState("");
       const[date,setdate] =useState("");
       const[mobileNo,setmobileNo] =useState();
+      const[adharNo ,setadharno]=useState("");
       const[farmAddress,setfarmAddress] =useState("");
       const[farmTaluka,setfarmTaluka] =useState("");
       const[farmDist,setfarmDist] =useState("");
@@ -59,10 +62,12 @@ export const FRegister=()=>
       const[pincode,setpincode] =useState();
       const[farmerId ,setfarmerId] =useState("");
       const[farmPass, setfarmPass] =useState("");
+      const [sevenA, setSelectedFile] = useState(null);
+      const [eightA, setSelectedFile2] = useState(null);
        
    
          const compIdTemp = localStorage.getItem("compIdVar");
-      const Farmer = {farmName,gender,date,mobileNo,farmAddress,farmTaluka,farmDist,farmState,pincode,farmerId,farmPass ,compIdTemp};
+      const Farmer = {farmName,gender,date,mobileNo,farmAddress,farmTaluka,farmDist,farmState,pincode,farmerId,farmPass ,compIdTemp,sevenA,eightA,adharNo};
      
       
       const handlefarminfo = async(e)=>
@@ -70,6 +75,13 @@ export const FRegister=()=>
 
         e.preventDefault();
         console.log(Farmer);
+
+
+       
+
+
+
+
         for (const key in Farmer) {
           if ((Farmer[key] === undefined || Farmer[key] === null || Farmer[key] ==="")&&(Farmer[compIdTemp])!==null)
            {
@@ -80,6 +92,16 @@ export const FRegister=()=>
         
         }
 
+
+
+       
+
+     
+        
+
+
+         
+
          
           console.log("Before data:",Farmer);
         if( await addfarmer(Farmer))
@@ -88,7 +110,8 @@ export const FRegister=()=>
           showToastMessage();
          
           Farmer.date="";Farmer.farmAddress="";Farmer.farmName="";Farmer.farmPass="";Farmer.farmDist="";Farmer.farmTaluka=""
-          ;Farmer.farmState="";Farmer.pincode="";Farmer.gender="";Farmer.mobileNo="";Farmer.farmerId="";
+          ;Farmer.farmState="";Farmer.pincode="";Farmer.gender="";Farmer.mobileNo="";Farmer.farmerId="";Farmer.adharNo="";
+          Farmer.eightA="";Farmer.sevenA="";
 
           console.log("AFTER:",Farmer);
           clearform();
@@ -123,7 +146,7 @@ export const FRegister=()=>
        <div id="outsidef">
 
         <h2>Farmer Registration Form</h2>
-        <form method="post">
+        <form method="post" encType="">
           <div className="form-group">
             <label for="farmerName"><i className="fas fa-building"></i> Farmer Name</label>
             <input type="text" className="form-control" id="farmerName" placeholder="Enter Farmer Name" required onChange={(e)=>{setfarmName(e.target.value)}}/>
@@ -177,15 +200,42 @@ export const FRegister=()=>
           </div>
           <div className="form-group">
             <label for="aadhar"><i className="fas fa-pen"></i> Enter Aadhar Number</label>
-            <input type="number" className="form-control" id="aadhar" placeholder="Enter Aadhar No." />
+            <input type="number" className="form-control" id="aadhar" placeholder="Enter Aadhar No." required onChange={(e)=>{setadharno(e.target.value)}}/>
           </div>
           <div className="form-group">
             <label for="seven"><i className="fas fa-image"></i> Upload 7/12 </label>
-            <input type="file"  id="seven" placeholder="Upload Photo Here " />
+            <input type="file"  id="seven" placeholder="Upload Photo Here " onChange={(e)=>{setSelectedFile(e.target.files[0])}} />
+            <button onClick={()=>{  const formData = new FormData();
+        formData.append('file', sevenA);
+        
+    
+        axios.post('http://localhost:8080/upload', formData)
+          .then(response => {
+            console.log(response.data);
+            setSelectedFile(response.data);
+          })
+          .catch(error => {
+            console.error(error);
+          });}}>Upload</button>
+
+
           </div>
           <div className="form-group">
             <label for="eight"><i className="fas fa-image"></i> Upload 8/A </label>
-            <input type="file"  id="eight" placeholder="Upload Photo Here " />
+            <input type="file"  id="eight" placeholder="Upload Photo Here " onChange={(e)=>{setSelectedFile2(e.target.files[0])}} /> 
+            <button onClick={()=>{
+              const formData = new FormData();
+               formData.append('file',eightA);
+               axios.post('http://localhost:8080/upload', formData)
+               .then(response => {
+                 console.log(response.data);
+                 setSelectedFile2(response.data);
+               })
+               .catch(error => {
+                 console.error(error);
+               });
+
+             }}>Upload</button>
           </div>
           <div className="form-group">
             <label for="farmerId"><i className="fas fa-pen"></i> Farmer Id </label>

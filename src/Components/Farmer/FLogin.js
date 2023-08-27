@@ -16,25 +16,25 @@ export const FLogin = () => {
     setshowpass(!showpass);
   };
 
-    
-  const apiUrl= 'http://localhost:8080';
+  const apiUrl = "http://localhost:8080";
+  // const apiUrl= 'http://192.168.29.83:8080';
 
   const [farid,setusn] =useState("");
   const[farpass,setpass]=useState("");
 
   const obfarmer={farid,farpass};
-
+  const sad=5;
   const handleinfo= async(e)=>{
     e.preventDefault();
 
   //  const res= await checkloginfarm(obfarmer).then((resp)=>{resp.data } )
-     
+    try{
    return await axios.post(`${apiUrl}/FarmerLogin`,obfarmer).then((response)=>{
     console.log(response.data);
 
      if(response.data===true)  
     {
-     
+     localStorage.setItem("avya",sad);
       localStorage.setItem("pk",farid);
     
       setTimeout(function(){console.log(obfarmer);   toast.success("Login SUCCESSFUL")} ,1000);
@@ -53,7 +53,13 @@ export const FLogin = () => {
         // document.getElementById("llo1").click();
         
       }
+      
  });
+}
+catch(error)
+{
+  toast.error("connect to server first");
+}
  
      
 

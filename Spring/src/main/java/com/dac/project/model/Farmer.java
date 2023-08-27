@@ -25,6 +25,9 @@ import jakarta.persistence.Id;
 		private String farmState;
 		private Long pincode;
 		private String compIdTemp;
+		private String adharNo;
+		private String sevenA;
+		private String eightA;
 	
 		@Id
 		private String farmerId;
@@ -36,7 +39,7 @@ import jakarta.persistence.Id;
 
 		public Farmer(String farmName, String gender, LocalDateTime ldt, LocalDate date, Long mobileNo,
 				String farmAddress, String farmTaluka, String farmDist, String farmState, Long pincode,
-				String compIdTemp, String farmerId, String farmPass) {
+				String compIdTemp, String adharNo, String sevenA, String eightA, String farmerId, String farmPass) {
 			super();
 			this.farmName = farmName;
 			this.gender = gender;
@@ -49,6 +52,9 @@ import jakarta.persistence.Id;
 			this.farmState = farmState;
 			this.pincode = pincode;
 			this.compIdTemp = compIdTemp;
+			this.adharNo = adharNo;
+			this.sevenA = sevenA;
+			this.eightA = eightA;
 			this.farmerId = farmerId;
 			this.farmPass = farmPass;
 		}
@@ -141,6 +147,30 @@ import jakarta.persistence.Id;
 			this.compIdTemp = compIdTemp;
 		}
 
+		public String getAdharNo() {
+			return adharNo;
+		}
+
+		public void setAdharNo(String adharNo) {
+			this.adharNo = adharNo;
+		}
+
+		public String getSevenA() {
+			return sevenA;
+		}
+
+		public void setSevenA(String sevenA) {
+			this.sevenA = sevenA;
+		}
+
+		public String getEightA() {
+			return eightA;
+		}
+
+		public void setEightA(String eightA) {
+			this.eightA = eightA;
+		}
+
 		public String getFarmerId() {
 			return farmerId;
 		}
@@ -162,8 +192,13 @@ import jakarta.persistence.Id;
 			return "Farmer [farmName=" + farmName + ", gender=" + gender + ", ldt=" + ldt + ", date=" + date
 					+ ", mobileNo=" + mobileNo + ", farmAddress=" + farmAddress + ", farmTaluka=" + farmTaluka
 					+ ", farmDist=" + farmDist + ", farmState=" + farmState + ", pincode=" + pincode + ", compIdTemp="
-					+ compIdTemp + ", farmerId=" + farmerId + ", farmPass=" + farmPass + "]";
+					+ compIdTemp + ", adharNo=" + adharNo + ", sevenA=" + sevenA + ", eightA=" + eightA + ", farmerId="
+					+ farmerId + ", farmPass=" + farmPass + "]";
 		}
+
+		
+		
 		
 	}
+
 	

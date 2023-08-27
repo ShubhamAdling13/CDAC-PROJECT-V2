@@ -6,8 +6,8 @@ import { Link, Navigate } from "react-router-dom";
 export const CreateBatch=()=>{
 
    
-   
-    const apiUrl= 'http://localhost:8080';
+  const apiUrl = "http://localhost:8080";
+    // const apiUrl= 'http://192.168.29.83:8080';
    const [startDate,setstartdate] =useState("");
    const [totalBirds,settotalbirds] =useState("");
    const [batchStatus,setbactchstateus] =useState(true);

@@ -3,8 +3,8 @@ import { useState } from "react"
 import "./FarmerDailyRpDisp.css"
 export const  FamerDailyRpDisp =()=>{
 
-
-    const apiUrl= 'http://localhost:8080';
+   const apiUrl = "http://localhost:8080";
+   //  const apiUrl= 'http://192.168.29.83:8080';
     const[batchId ,setbat] =useState();
     // const[id,setidd]=useState(batchId);
     const[alldatainfo ,setalldatatinfo] =useState([]);

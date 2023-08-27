@@ -10,7 +10,12 @@
     /* border: 5px solid red; */
     padding-top: 6%;
     padding-bottom:10% ;
-    background-color: antiquewhite;
+    /* background: linear-gradient(to right,#407C87,#A5DBDD,#EEF1F6,#D3E1E2); */
+    /* background:linear-gradient(to right,#38B4D0,#FAC7C3,#FFF7EC,#A9E2F5); */
+    /* background: radial-gradient(#3c3d42,#9ccd62,#f6f8e2,#e0ddca); */
+    background: radial-gradient(rgb(255, 255, 255),rgb(255, 215, 141),rgb(255, 216, 117));
+    
+    
 }
 
 
@@ -46,6 +51,10 @@
    color: black;
     background:linear-gradient(45deg , rgb(106, 240, 255) , rgb(7, 52, 255));
     transition: all ease 1s;
+  }
+
+  .Cdash-outerdiv-image img{
+    filter: drop-shadow(0 0 5px );
   }
 
   

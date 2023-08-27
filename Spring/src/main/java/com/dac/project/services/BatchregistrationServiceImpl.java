@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dac.project.Repository.BatchRegisterRepo;
+
 import com.dac.project.model.BatchRegistration;
 import com.dac.project.model.CloseBatch;
+import com.dac.project.model.Dailyrpforfarmerfetch;
 
 @Service
 public class BatchregistrationServiceImpl implements BatchRegistrationService {
@@ -37,5 +39,17 @@ public class BatchregistrationServiceImpl implements BatchRegistrationService {
 		           
 		                   
 	}
+
+
+	@Override
+	public long gettotalbirds(Dailyrpforfarmerfetch batch) {
+		 BatchRegistration   b = batchRegisterRepo.findById(batch.getBatchId()).get();
+		   long s = b.getTotalBirds();
+		   
+		return s;
+	}
+
+
+	
 
 }

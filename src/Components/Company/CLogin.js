@@ -18,12 +18,13 @@ export const CLogin = () => {
            setseepassword(!seepassword);
     };
 
-    const apiUrl= 'http://localhost:8080';
+    const apiUrl = "http://localhost:8080";
+    // const apiUrl= 'http://192.168.29.83:8080';
     const[compid ,setcompid]= useState("");
     const [comppass,setcomppass]=useState("");
    
     const CompLgdet ={compid,comppass};
-
+   const bad =6;
    const handliecomploginfo=async()=>{
               
      
@@ -34,6 +35,7 @@ export const CLogin = () => {
         
         if(resp.data===true)
         {
+            localStorage.setItem("disha",bad)
               localStorage.setItem("compIdVar",compid);
                document.getElementById("cmpdsh").click();
                setTimeout(function(){  toast.success("Login SUCCESSFUL")} ,1000);

@@ -12,6 +12,7 @@ import com.dac.project.services.BatchRegistrationService;
 
 @RestController
 @CrossOrigin
+//@CrossOrigin(origins = "http://192.168.29.83:3000")
 public class BatchController {
 	
 	@Autowired(required = true)

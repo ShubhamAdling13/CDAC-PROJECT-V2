@@ -7,7 +7,8 @@ import axios from 'axios';
 const UserProfileCard=()=>
 {
     useEffect(()=>{
-        const apiUrl= 'http://localhost:8080';
+        const apiUrl = "http://localhost:8080";
+        // const apiUrl= 'http://192.168.29.83:8080';
         let id =localStorage.getItem("pk");
         axios.get(`${apiUrl}/Getfarm/${id}`).then((resp)=>{
             console.log(resp);
