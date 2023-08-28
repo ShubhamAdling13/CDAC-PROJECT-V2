@@ -19,15 +19,15 @@ export const FDailyReport = () => {
       let farmerId = localStorage.getItem("pk");
       const dailyrpob = { batchId, farmerId, batchNo }
 
-      axios.post(`${apiUrl}/getdailyrepforfarmer`, dailyrpob).then((ans) => {
-        //  console.log(ans);
+      // axios.post(`${apiUrl}/getdailyrepforfarmer`, dailyrpob).then((ans) => {
+      //   //  console.log(ans);
 
 
 
-        localStorage.setItem("da", JSON.stringify(ans.data));
+      //   localStorage.setItem("da", JSON.stringify(ans.data));
 
-        //  toast.success("request sent to server successfully",toast.POSITION.TOP_RIGHT);
-      })
+      //   //  toast.success("request sent to server successfully",toast.POSITION.TOP_RIGHT);
+      // })
 
 
       axios.post(`${apiUrl}/getdailyrepforfarmer`, dailyrpob).then((ans) => {

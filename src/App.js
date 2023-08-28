@@ -28,6 +28,7 @@ import { FamerDailyRpDisp } from './Components/Company/FamerDailyRpDisp';
 import { Getreport } from './Components/Farmer/Getreport';
 import { useEffect } from 'react';
 import { NavV1 } from './Components/Navbar/NavV1';
+import { Problmefromfarmer } from './Components/Company/Problmefromfarmer';
 
 
 
@@ -62,6 +63,7 @@ function App() {
       <Route path='/dailyreportoption' element={<Dailyreportoptions/>}/>
       <Route path='/GetFarmerDailyReport' element={<FamerDailyRpDisp/>}/>
       <Route path='/Getreportforfarmer' element={<Getreport/>} />
+      <Route path='/farmerproblems' element={<Problmefromfarmer/>} />
     </Routes>
   </Router>
 </div> );

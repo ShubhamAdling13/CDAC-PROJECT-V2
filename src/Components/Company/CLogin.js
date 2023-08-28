@@ -37,6 +37,21 @@ export const CLogin = () => {
         {
             localStorage.setItem("disha",bad)
               localStorage.setItem("compIdVar",compid);
+              
+              const companyId = localStorage.getItem("compIdVar");
+              const obje = {companyId};
+         
+              axios.post(`${apiUrl}/getfarmerproblemslist`,obje).then((res)=>{
+         
+         
+                   localStorage.setItem("listoffarmprob",JSON.stringify(res.data));
+         
+         
+                  
+              })
+
+
+
                document.getElementById("cmpdsh").click();
                setTimeout(function(){  toast.success("Login SUCCESSFUL")} ,1000);
         }

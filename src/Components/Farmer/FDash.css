@@ -14,7 +14,8 @@
 
 
   .imgleft {
-    
+
+    /* margin-bottom: 10%; */
      /* filter: drop-shadow(0 0 10px rgb(84, 241, 84)); */
 
   }
@@ -22,6 +23,7 @@
   {
       aspect-ratio: 4/3;
     object-fit: contain;
+   
   }
   
 
@@ -199,5 +201,7 @@
   align-items: center;
   
 }
+
+
 
 

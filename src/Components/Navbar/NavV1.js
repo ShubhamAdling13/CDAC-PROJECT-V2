@@ -4,16 +4,14 @@ import logo from  "../../Images/AppLogo.png" ;
 import {Link, useLocation} from 'react-router-dom';
 import { useEffect } from 'react';
 export const NavV1=()=>
-{
-
-    // const location = useLocation();
-
-    const location = useLocation();
-
+{ const location = useLocation();
     const isHomePage = location.pathname === "/";
     const shouldShowLogout = !isHomePage;
+   
+  
+    useEffect(() => {
+     
 
-    
         if (localStorage.getItem("avya")) {
             const complogElements = document.querySelectorAll(".complog");
             const logoutElements = document.querySelectorAll(".logout");
@@ -34,8 +32,7 @@ export const NavV1=()=>
                 element.style.display = 'none';
             });
         }
-
-
+    }, [location]);
  
 
   
@@ -65,10 +62,10 @@ export const NavV1=()=>
                         <li> <button onClick={() => { document.getElementById("lgt").click() }}>Logout</button></li>
                     </span>
                 )}
-                <Link to="/" id='hh' ></Link>
-                <Link to="home/Farmerlogin" id='fldd'> </Link>
-                <Link to="home/Companylogin" id='cldd' ></Link>
-                <Link to="/about" id='abtl' ></Link>
+                <Link to="/" id='hh' onClick={() => { localStorage.clear() }} ></Link>
+                <Link to="home/Farmerlogin" id='fldd' onClick={() => { localStorage.clear() }}> </Link>
+                <Link to="home/Companylogin" id='cldd' onClick={() => { localStorage.clear() }} ></Link>
+                <Link to="/about" id='abtl' onClick={() => { localStorage.clear() }} ></Link>
                 <Link to="/" onClick={() => { localStorage.clear() }} id='lgt'></Link>
             </span>
         );

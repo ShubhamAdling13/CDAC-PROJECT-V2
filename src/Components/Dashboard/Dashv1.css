@@ -138,7 +138,7 @@
             grid-template-columns: 40% 49%;
             grid-gap: 2%;
             /* background-size: cover; */
-            /* padding-bottom: 2%; */
+            padding-bottom: 2%;
            /* background: url(../../Images/Untitleddesign.png); */
       
 
@@ -160,10 +160,14 @@
     .maindash-slogan{
       /* border: 2px solid greenyellow; */
           font-size: xx-large;
+          padding-bottom: 5%;
     }
 
     .maindash-slogan img{
       width: 50%;
+      /* border: 1px solid red; */
+      margin-left: 5%;
+    
     }
 
     .maindash-slogan #fh1{

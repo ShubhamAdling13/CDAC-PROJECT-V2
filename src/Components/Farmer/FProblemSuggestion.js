@@ -19,21 +19,21 @@ export const FProblemSuggestion=()=>
 
 
 
-   const getFormattedDate = (date) => {
-    const inputDate = date ? new Date(date) : new Date();
-    const year = inputDate.getFullYear();
-    let month = inputDate.getMonth() + 1;
-    let day = inputDate.getDate();
+//    const getFormattedDate = (date) => {
+//     const inputDate = date ? new Date(date) : new Date();
+//     const year = inputDate.getFullYear();
+//     let month = inputDate.getMonth() + 1;
+//     let day = inputDate.getDate();
 
-    month = month < 10 ? `0${month}` : month;
-    day = day < 10 ? `0${day}` : day;
+//     month = month < 10 ? `0${month}` : month;
+//     day = day < 10 ? `0${day}` : day;
 
-    return `${year}-${month}-${day}`;
-};
+//     return `${year}-${month}-${day}`;
+// };
 
 
-const manuallySetDate = ldtt;
-const formattedManuallySetDate = getFormattedDate(manuallySetDate);
+// const manuallySetDate = ldtt;
+// const formattedManuallySetDate = getFormattedDate(manuallySetDate);
 
 
 const handleinfo =(e)=>{
@@ -57,7 +57,7 @@ const handleinfo =(e)=>{
        <tr>
           <td>Date</td> <td>Select Problem </td> <td> Remark</td> <td>Upload Photo</td>
        </tr>
-       <tr><td><input type="date" onChange={(e)=>{setldt(e.target.valueAsDate)}} value={formattedManuallySetDate}/></td>
+       <tr><td><input type="date" onChange={(e)=>{setldt(e.target.valueAsDate)}} /></td>
        <td> <select onChange={(e)=>{setproblem(e.target.value) }}><option >viral</option> <option>flue</option> <option>Feed stock over</option> <option>Medicines over </option> <option selected>other</option> </select> </td>
        <td><input type="text" onChange={(e)=>{setremark(e.target.value)}}/></td><td><input type="file" onChange={(e)=>{setprobimg(e.target.files[0])}}/>
        <button onClick={(e)=>{
